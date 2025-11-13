@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>pizzeriaWeb</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e0f7fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #00bcd4;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #00acc1;
+    }
+
+    nav button {
+      background-color: #00bcd4;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav button:hover {
+      background-color: #0097a7;
+    }
+
+    section {
+      display: none;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .dish {
+      margin: 30px 0;
+    }
+
+    .dish img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .dish h3 {
+      margin-bottom: 10px;
+      color: #00796b;
+      font-size: 1.5em;
+    }
+
+    .description {
+      font-size: 1em;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #004d40;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>pizzeriaWeb</header>
+
+  <nav>
+    <button onclick="showSection('pizze')">Pizze</button>
+    <button onclick="showSection('dolci')">Dolci</button>
+    <button onclick="showSection('bevande')">Bevande</button>
+  </nav>
+
+  <section id="pizze">
+    <div class="dish">
+      <h3>Pizza Margherita</h3>
+      <img src="img/margherita.jpg" alt="Pizza Margherita">
+      <p class="description">Pomodoro San Marzano, mozzarella fior di latte, basilico fresco.</p>
+      <p class="price">€7.50</p>
+    </div>
+    <div class="dish">
+      <h3>Pizza Funghi e Salsiccia</h3>
+      <img src="img/funghi_salsiccia.jpg" alt="Pizza Funghi e Salsiccia">
+      <p class="description">Base bianca con mozzarella, funghi porcini e salsiccia artigianale.</p>
+      <p class="price">€9.00</p>
+    </div>
+  </section>
+
+  <section id="dolci">
+    <div class="dish">
+      <h3>Torta della Nonna</h3>
+      <img src="img/torta_della_nonna.jpg" alt="Torta della Nonna">
+      <p class="description">Frolla croccante con crema pasticcera e pinoli tostati.</p>
+      <p class="price">€4.50</p>
+    </div>
+    <div class="dish">
+      <h3>Tiramisù</h3>
+      <img src="img/tiramisu.jpg" alt="Tiramisù">
+      <p class="description">Savoiardi, mascarpone, caffè espresso e cacao amaro.</p>
+      <p class="price">€5.00</p>
+    </div>
+  </section>
+
+  <section id="bevande">
+    <div class="dish">
+      <h3>Espresso</h3>
+      <img src="img/espresso.jpg" alt="Espresso">
+      <p class="description">Caffè 100% arabica con crema vellutata e aroma intenso.</p>
+      <p class="price">€1.20</p>
+    </div>
+    <div class="dish">
+      <h3>MoleCola Classica</h3>
+      <img src="img/molecola_classica.jpg" alt="MoleCola Classica">
+      <p class="description">Cola italiana dal gusto deciso, perfetta con la pizza.</p>
+      <p class="price">€2.50</p>
+    </div>
+  </section>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
